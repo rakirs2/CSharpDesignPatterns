@@ -1,0 +1,15 @@
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/bin/Debug/net6.0/TemplateMethod
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/bin/Debug/net6.0/TemplateMethod.deps.json
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/bin/Debug/net6.0/TemplateMethod.runtimeconfig.json
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/bin/Debug/net6.0/TemplateMethod.dll
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/bin/Debug/net6.0/TemplateMethod.pdb
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.csproj.AssemblyReference.cache
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.AssemblyInfoInputs.cache
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.AssemblyInfo.cs
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.csproj.CoreCompileInputs.cache
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.dll
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/refint/TemplateMethod.dll
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.pdb
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/TemplateMethod.genruntimeconfig.cache
+/Users/rakirs/CSharpDesignPatterns/TemplateMethod/obj/Debug/net6.0/ref/TemplateMethod.dll
