@@ -19,21 +19,20 @@ namespace State
             _hasCorrectPin = new HasPin();
             _atmOutOfMoney = new NoCash();
 
+            //fundamentally, this is the thing that's going to be changing
             atmState = _noCard;
             if (_cashInMachine < 0)
             {
                 atmState = _atmOutOfMoney;
-                
             }
             
             
 
         }
 
-        void SetATMState(ATMState newATMState)
+        internal void SetATMState(ATMState newATMState)
         {
-            atmState = newATMState;
-            
+            _atmState = newATMState;
         }
 
         public void SetCashInMachine(int newCashInMachine)
@@ -49,6 +48,30 @@ namespace State
         public void EjectCard()
         {
             _atmState.ejectCard();
+        }
+
+        public InsertPin(int pinEntered)
+        {
+            _atmState.insertPin(pinEntered);
+        }
+
+        public ATMState GetYesCardState()
+        {
+            return _hasCard;
+        }
+        public ATMState GetNoCardState()
+        {
+            return _noCard;
+        }
+
+        public ATMState GetHasPin()
+        {
+            return _hasCorrectPin;
+        }
+
+        public ATMState getNoCashState()
+        {
+            return _atmOutOfMoney;
         }
         
         
