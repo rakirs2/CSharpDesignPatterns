@@ -20,7 +20,7 @@ namespace State
             _atmOutOfMoney = new NoCash();
 
             //fundamentally, this is the thing that's going to be changing
-            atmState = _noCard;
+            _atmState = _noCard;
             if (_cashInMachine < 0)
             {
                 atmState = _atmOutOfMoney;
@@ -42,7 +42,7 @@ namespace State
 
         public void InsertCard()
         {
-            atmState.insertCard();
+            _atmState.InsertCard();
         }
 
         public void EjectCard()

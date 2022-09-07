@@ -23,8 +23,7 @@ public class HasCard:ATMState
     {
         if (pinEntered == 1234 || pinEntered == 13190620)
         {
-            Console.WriteLine("Welcome To Microsot and C#, your pin is correct");
-            _atmMachine.c
+            Console.WriteLine("Welcome To Microsoft and C#, your pin is correct");
         }
     }
 
