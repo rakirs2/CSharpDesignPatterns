@@ -2,9 +2,11 @@ namespace State;
 
 public class NoCard:ATMState
 {
+    private ATMMachine _atmMachine;
     public void InsertCard()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter Pin");
+        _atmMachine.SetATMState(_atmMachine.GetYesCardState());
     }
 
     public void EjectCard()

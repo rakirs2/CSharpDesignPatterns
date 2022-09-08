@@ -10,7 +10,7 @@ namespace State
 
         private ATMState _atmState;
         private int _cashInMachine = 2000;
-        private boolean _correctPinEntered = false;
+        internal Boolean _correctPinEntered = false;
 
         public ATMMachine()
         {
