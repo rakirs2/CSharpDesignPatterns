@@ -2,22 +2,22 @@ namespace State;
 
 public class NoCash:ATMState
 {
-    public void insertCard()
+    public void InsertCard()
     {
         throw new NotImplementedException();
     }
 
-    public void ejectCard()
+    public void EjectCard()
     {
         throw new NotImplementedException();
     }
 
-    public void insertPin(int pinEntered)
+    public void InsertPin(int pinEntered)
     {
         throw new NotImplementedException();
     }
 
-    public void requestCash(int cash)
+    public void RequestCash(int cash)
     {
         throw new NotImplementedException();
     }

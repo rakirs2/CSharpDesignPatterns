@@ -47,12 +47,12 @@ namespace State
 
         public void EjectCard()
         {
-            _atmState.ejectCard();
+            _atmState.EjectCard();
         }
 
-        public InsertPin(int pinEntered)
+        public void InsertPin(int pinEntered)
         {
-            _atmState.insertPin(pinEntered);
+            _atmState.InsertPin(pinEntered);
         }
 
         public ATMState GetYesCardState()
@@ -69,7 +69,7 @@ namespace State
             return _hasCorrectPin;
         }
 
-        public ATMState getNoCashState()
+        public ATMState GetNoCashState()
         {
             return _atmOutOfMoney;
         }

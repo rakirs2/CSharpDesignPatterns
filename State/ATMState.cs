@@ -3,9 +3,9 @@ namespace State
 {
     public interface ATMState
     {
-        void insertCard();
-        void ejectCard();
-        void insertPin(int pinEntered);
-        void requestCash(int cash);
+        void InsertCard();
+        void EjectCard();
+        void InsertPin(int pinEntered);
+        void RequestCash(int cash);
     }
 }

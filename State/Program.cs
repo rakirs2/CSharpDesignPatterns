@@ -2,7 +2,7 @@
 
 var atmMachine = new ATMMachine();
 
-atmMachine.insertCard();
+atmMachine.InsertCard();
 
 atmMachine.ejectCard();
 
