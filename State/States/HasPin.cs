@@ -2,23 +2,53 @@ namespace State;
 
 public class HasPin:ATMState
 {
-    public void InsertCard()
+    private ATMMachine _atmMachine;
+    
+    public HasPin(ATMMachine atmMachine)
     {
-        throw new NotImplementedException();
+        _atmMachine = atmMachine;
+    }public void InsertCard()
+    {
+        Console.WriteLine("this is not a 2 for one special");
     }
 
     public void EjectCard()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("card ejected");
+        _atmMachine.SetATMState(_atmMachine.GetNoCardState());
     }
 
     public void InsertPin(int pinEntered)
     {
-        throw new NotImplementedException();
+        Console.Write("Someone Likes Security");
     }
 
-    public void RequestCash(int cash)
+    public void RequestCash(int cashToWithdraw)
     {
-        throw new NotImplementedException();
+        if(cashToWithdraw > _atmMachine._cashInMachine){
+
+            Console.WriteLine("You don't have that much cash available");
+
+            Console.WriteLine("Your card is ejected");
+
+            _atmMachine.SetATMState(_atmMachine.GetNoCardState());
+
+        } else {
+
+            Console.WriteLine(cashToWithdraw + " is provided by the machine");
+
+            _atmMachine.SetCashInMachine(_atmMachine._cashInMachine - cashToWithdraw);
+
+            Console.WriteLine("Your card is ejected");
+
+            _atmMachine.SetATMState(_atmMachine.GetNoCardState());
+
+            if(_atmMachine._cashInMachine <= 0){
+
+                _atmMachine.SetATMState(_atmMachine.GetNoCashState());
+
+            }
+        }
+
     }
 }

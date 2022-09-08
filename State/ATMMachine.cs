@@ -1,4 +1,5 @@
 ﻿using System;
+//TODO.Srikar get this to work?
 namespace State
 {
     public class ATMMachine
@@ -9,21 +10,21 @@ namespace State
         ATMState _atmOutOfMoney;
 
         private ATMState _atmState;
-        private int _cashInMachine = 2000;
+        internal int _cashInMachine = 2000;
         internal Boolean _correctPinEntered = false;
 
         public ATMMachine()
         {
             _hasCard = new HasCard(this);
             _noCard = new NoCard(this);
-            _hasCorrectPin = new HasPin();
-            _atmOutOfMoney = new NoCash();
+            _hasCorrectPin = new HasPin(this);
+            _atmOutOfMoney = new NoCash(this);
 
             //fundamentally, this is the thing that's going to be changing
             _atmState = _noCard;
             if (_cashInMachine < 0)
             {
-                atmState = _atmOutOfMoney;
+                _atmState = _atmOutOfMoney;
             }
             
             

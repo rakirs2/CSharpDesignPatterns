@@ -2,23 +2,31 @@ namespace State;
 
 public class NoCash:ATMState
 {
+    private ATMMachine _atmMachine;
+    public NoCash(ATMMachine atmMachine)
+    {
+        _atmMachine = atmMachine;
+    }
     public void InsertCard()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("We Got No $$");
+        Console.WriteLine("Card EJected");
     }
 
     public void EjectCard()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("We Got No $$");
+        Console.WriteLine("This should never be reached");
+
     }
 
     public void InsertPin(int pinEntered)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("We Got No $$");
     }
 
     public void RequestCash(int cash)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("We Got No $$");
     }
 }

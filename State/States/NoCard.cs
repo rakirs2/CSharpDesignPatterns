@@ -3,6 +3,11 @@ namespace State;
 public class NoCard:ATMState
 {
     private ATMMachine _atmMachine;
+
+    public NoCard(ATMMachine atmMachine)
+    {
+        _atmMachine = atmMachine;
+    }
     public void InsertCard()
     {
         Console.WriteLine("Enter Pin");
@@ -11,16 +16,16 @@ public class NoCard:ATMState
 
     public void EjectCard()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Card not available. Existence Abnormality");
     }
 
     public void InsertPin(int pinEntered)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("You need a card");
     }
 
     public void RequestCash(int cash)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("What is this, a PPP loan?");
     }
 }

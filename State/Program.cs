@@ -4,14 +4,14 @@ var atmMachine = new ATMMachine();
 
 atmMachine.InsertCard();
 
-atmMachine.ejectCard();
+atmMachine.EjectCard();
 
-atmMachine.insertCard();
+atmMachine.InsertCard();
 
-atmMachine.insertPin(1234);
+atmMachine.InsertPin(1234);
 
-atmMachine.requestCash(2000);
+atmMachine.RequestCash(2000);
 
-atmMachine.insertCard();
+atmMachine.InsertCard();
 
-atmMachine.insertPin(1234);
+atmMachine.InsertPin(1234);

@@ -39,6 +39,6 @@ public class HasCard:ATMState
 
     public void RequestCash(int cash)
     {
-        throw new NotImplementedException();
+        Console.Write("You need to put your pin first");
     }
 }
