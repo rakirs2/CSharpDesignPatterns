@@ -74,8 +74,12 @@ namespace State
         {
             return _atmOutOfMoney;
         }
-        
-        
+
+
+        public void RequestCash(int i)
+        {
+            _atmState.RequestCash(i);
+        }
     }
 }
 
