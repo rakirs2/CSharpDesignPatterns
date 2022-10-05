@@ -1,85 +1,78 @@
-﻿using System;
-//TODO.Srikar get this to work?
-namespace State
+﻿using State.States;
+
+namespace State;
+
+public class AtmMachine
 {
-    public class ATMMachine
+    private readonly IAtmState _atmOutOfMoney;
+    private readonly IAtmState _hasCard;
+    private readonly IAtmState _hasCorrectPin;
+    private readonly IAtmState _noCard;
+
+    private IAtmState _atmState;
+    internal int CashInMachine = 2000;
+    internal bool CorrectPinEntered = false;
+
+    public AtmMachine()
     {
-        ATMState _hasCard;
-        ATMState _noCard;
-        ATMState _hasCorrectPin;
-        ATMState _atmOutOfMoney;
+        _hasCard = new HasCard(this);
+        _noCard = new NoCard(this);
+        _hasCorrectPin = new HasPin(this);
+        _atmOutOfMoney = new NoCash(this);
 
-        private ATMState _atmState;
-        internal int _cashInMachine = 2000;
-        internal Boolean _correctPinEntered = false;
+        //fundamentally, this is the thing that's going to be changing
+        _atmState = _noCard;
+        if (CashInMachine < 0) _atmState = _atmOutOfMoney;
+    }
 
-        public ATMMachine()
-        {
-            _hasCard = new HasCard(this);
-            _noCard = new NoCard(this);
-            _hasCorrectPin = new HasPin(this);
-            _atmOutOfMoney = new NoCash(this);
+    internal void SetATMState(IAtmState newATMState)
+    {
+        _atmState = newATMState;
+    }
 
-            //fundamentally, this is the thing that's going to be changing
-            _atmState = _noCard;
-            if (_cashInMachine < 0)
-            {
-                _atmState = _atmOutOfMoney;
-            }
-            
-            
+    public void SetCashInMachine(int newCashInMachine)
+    {
+        CashInMachine = newCashInMachine;
+    }
 
-        }
+    public void InsertCard()
+    {
+        _atmState.InsertCard();
+    }
 
-        internal void SetATMState(ATMState newATMState)
-        {
-            _atmState = newATMState;
-        }
+    public void EjectCard()
+    {
+        _atmState.EjectCard();
+    }
 
-        public void SetCashInMachine(int newCashInMachine)
-        {
-            _cashInMachine = newCashInMachine;
-        }
+    public void InsertPin(int pinEntered)
+    {
+        _atmState.InsertPin(pinEntered);
+    }
 
-        public void InsertCard()
-        {
-            _atmState.InsertCard();
-        }
+    public IAtmState GetYesCardState()
+    {
+        return _hasCard;
+    }
 
-        public void EjectCard()
-        {
-            _atmState.EjectCard();
-        }
+    public IAtmState GetNoCardState()
+    {
+        return _noCard;
+    }
 
-        public void InsertPin(int pinEntered)
-        {
-            _atmState.InsertPin(pinEntered);
-        }
+    public IAtmState GetHasPin()
+    {
+        return _hasCorrectPin;
+    }
 
-        public ATMState GetYesCardState()
-        {
-            return _hasCard;
-        }
-        public ATMState GetNoCardState()
-        {
-            return _noCard;
-        }
-
-        public ATMState GetHasPin()
-        {
-            return _hasCorrectPin;
-        }
-
-        public ATMState GetNoCashState()
-        {
-            return _atmOutOfMoney;
-        }
+    public IAtmState GetNoCashState()
+    {
+        return _atmOutOfMoney;
+    }
 
 
-        public void RequestCash(int i)
-        {
-            _atmState.RequestCash(i);
-        }
+    public void RequestCash(int i)
+    {
+        _atmState.RequestCash(i);
     }
 }
-

@@ -1,6 +1,6 @@
 ﻿using State;
 
-var atmMachine = new ATMMachine();
+var atmMachine = new AtmMachine();
 
 atmMachine.InsertCard();
 

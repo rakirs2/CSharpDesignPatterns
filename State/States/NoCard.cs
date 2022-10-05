@@ -1,13 +1,14 @@
-namespace State;
+namespace State.States;
 
-public class NoCard:ATMState
+public class NoCard : IAtmState
 {
-    private ATMMachine _atmMachine;
+    private readonly AtmMachine _atmMachine;
 
-    public NoCard(ATMMachine atmMachine)
+    public NoCard(AtmMachine atmMachine)
     {
         _atmMachine = atmMachine;
     }
+
     public void InsertCard()
     {
         Console.WriteLine("Enter Pin");

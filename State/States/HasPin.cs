@@ -1,13 +1,15 @@
-namespace State;
+namespace State.States;
 
-public class HasPin:ATMState
+public class HasPin : IAtmState
 {
-    private ATMMachine _atmMachine;
-    
-    public HasPin(ATMMachine atmMachine)
+    private readonly AtmMachine _atmMachine;
+
+    public HasPin(AtmMachine atmMachine)
     {
         _atmMachine = atmMachine;
-    }public void InsertCard()
+    }
+
+    public void InsertCard()
     {
         Console.WriteLine("this is not a 2 for one special");
     }
@@ -25,30 +27,25 @@ public class HasPin:ATMState
 
     public void RequestCash(int cashToWithdraw)
     {
-        if(cashToWithdraw > _atmMachine._cashInMachine){
-
+        if (cashToWithdraw > _atmMachine.CashInMachine)
+        {
             Console.WriteLine("You don't have that much cash available");
 
             Console.WriteLine("Your card is ejected");
 
             _atmMachine.SetATMState(_atmMachine.GetNoCardState());
-
-        } else {
-
+        }
+        else
+        {
             Console.WriteLine(cashToWithdraw + " is provided by the machine");
 
-            _atmMachine.SetCashInMachine(_atmMachine._cashInMachine - cashToWithdraw);
+            _atmMachine.SetCashInMachine(_atmMachine.CashInMachine - cashToWithdraw);
 
             Console.WriteLine("Your card is ejected");
 
             _atmMachine.SetATMState(_atmMachine.GetNoCardState());
 
-            if(_atmMachine._cashInMachine <= 0){
-
-                _atmMachine.SetATMState(_atmMachine.GetNoCashState());
-
-            }
+            if (_atmMachine.CashInMachine <= 0) _atmMachine.SetATMState(_atmMachine.GetNoCashState());
         }
-
     }
 }

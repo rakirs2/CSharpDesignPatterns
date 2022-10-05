@@ -1,23 +1,24 @@
-namespace State;
+namespace State.States;
 
-public class NoCash:ATMState
+public class NoCash : IAtmState
 {
-    private ATMMachine _atmMachine;
-    public NoCash(ATMMachine atmMachine)
+    private AtmMachine _atmMachine;
+
+    public NoCash(AtmMachine atmMachine)
     {
         _atmMachine = atmMachine;
     }
+
     public void InsertCard()
     {
         Console.WriteLine("We Got No $$");
-        Console.WriteLine("Card EJected");
+        Console.WriteLine("Card Ejected");
     }
 
     public void EjectCard()
     {
         Console.WriteLine("We Got No $$");
         Console.WriteLine("This should never be reached");
-
     }
 
     public void InsertPin(int pinEntered)
