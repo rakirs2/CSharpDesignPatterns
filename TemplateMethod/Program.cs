@@ -1,9 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using TemplateMethod;
 
 Console.WriteLine("Hello, World!");
 
-ItalianHoagie italianHoagie = new ItalianHoagie();
+var italianHoagie = new ItalianHoagie();
 italianHoagie.makeSandwich();
-VeggieHoagie veggieHoagie = new VeggieHoagie();
+var veggieHoagie = new VeggieHoagie();
 veggieHoagie.makeSandwich();

@@ -1,70 +1,54 @@
-﻿using System;
-namespace TemplateMethod
+﻿namespace TemplateMethod;
+
+public abstract class Hoagie
 {
-    public abstract class Hoagie
+    internal void makeSandwich()
     {
-        internal void makeSandwich()
-        {
-            CutBun();
+        CutBun();
 
-            if (CustomerWantsMeat())
-            {
-                AddMeat();
-            }
-            if (CustomerWantsCheese())
-            {
-                AddCheese();
-            }
+        if (CustomerWantsMeat()) AddMeat();
+        if (CustomerWantsCheese()) AddCheese();
 
-            if (CustomerWantsVegetables())
-            {
-                AddVegetables();
-            }
-            if (CustomerWantsCondiments())
-            {
-                AddCondiments();
-            }
+        if (CustomerWantsVegetables()) AddVegetables();
+        if (CustomerWantsCondiments()) AddCondiments();
 
-            WrapTheHoagie();
-        }
-        public Hoagie()
-        {
-        }
+        WrapTheHoagie();
+    }
 
-        internal abstract void AddMeat();
-        internal abstract void AddCheese();
-        internal abstract void AddVegetables();
-        internal abstract void AddCondiments();
+    internal abstract void AddMeat();
+    internal abstract void AddCheese();
+    internal abstract void AddVegetables();
+    internal abstract void AddCondiments();
 
-        //hook
+    //hook
 
-        Boolean CustomerWantsMeat()
-        {
-            return true;
-        }
-        Boolean CustomerWantsCheese()
-        {
-            return true;
-        }
-        Boolean CustomerWantsVegetables()
-        {
-            return true;
-        }
-        Boolean CustomerWantsCondiments()
-        {
-            return true;
-        }
+    private bool CustomerWantsMeat()
+    {
+        return true;
+    }
 
-        public void WrapTheHoagie()
-        {
-            Console.WriteLine("Hoagie is Wrapped");
-        }
+    private bool CustomerWantsCheese()
+    {
+        return true;
+    }
 
-        public void CutBun()
-        {
-            Console.WriteLine("Bun is Cut");
-        }
+    private bool CustomerWantsVegetables()
+    {
+        return true;
+    }
 
+    private bool CustomerWantsCondiments()
+    {
+        return true;
+    }
+
+    public void WrapTheHoagie()
+    {
+        Console.WriteLine("Hoagie is Wrapped");
+    }
+
+    public void CutBun()
+    {
+        Console.WriteLine("Bun is Cut");
     }
 }
-
